@@ -1,21 +1,27 @@
-# DEPRECATED: This is default behaviour in Webpack 2.x, you don't need this plugin anymore.
+# FailOnErrorsPlugin
 
-Webpack plugin that will make the process return status code 1 when it finishes with errors in single-run mode.
+Webpack plugin that will make the process exit with status code 1 when it finishes with soft errors or warnings.
 
 ## Install
-`npm install webpack-fail-plugin`
+
+`npm install fail-on-errors-webpack-plugin`
 
 ## Usage
+
 ```javascript
-var failPlugin = require('webpack-fail-plugin');
+var FailOnErrorsPlugin = require('fail-on-errors-webpack-plugin');
 
 module.exports = {
-	//config
-	plugins: [
-		failPlugin
-	]
+  //config
+  plugins: [
+    new FailOnErrorsPlugin({
+      failOnErrors: true,
+      failOnWarnings: true,
+    })
+  ]
 }
 ```
 
-Credits to [@happypoulp](https://github.com/happypoulp).
+## Credits
 
+Forked from [webpack-fail-plugin](https://github.com/TiddoLangerak/webpack-fail-plugin)
