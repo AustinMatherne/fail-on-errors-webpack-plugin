@@ -1,16 +1,25 @@
-module.exports = function() {
-  var isWatch = true;
+'use strict'
 
-  this.plugin("run", function(compiler, callback) {
-    isWatch = false;
-    callback.call(compiler);
-  });
+const defaultOptions = {
+  failOnErrors: true,
+  failOnWarnings: false,
+}
 
-  this.plugin("done", function(stats) {
-    if (stats.compilation.errors && stats.compilation.errors.length && !isWatch) {
-      process.on('beforeExit', function() {
-        process.exit(1);
-      });
-    }
-  });
-};
+class FailOnErrorsPlugin {
+  constructor(options) {
+    this.options = Object.assign({}, defaultOptions, options);
+  }
+
+  apply(compiler) {
+    compiler.plugin('done', stats => {
+      const errors = this.options.failOnErrors && stats.hasErrors();
+      const warnings = this.options.failOnWarnings && stats.hasWarnings();
+
+      if (errors || warnings) {
+        process.on('beforeExit', () => {
+          process.exit(1);
+        });
+      }
+    });
+  }
+}
