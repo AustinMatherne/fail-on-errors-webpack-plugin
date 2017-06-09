@@ -1,25 +1,25 @@
 {
-  "name": "webpack-fail-plugin",
-  "version": "1.0.6",
+  "name": "fail-on-errors-webpack-plugin",
+  "version": "1.0.0",
   "description": "Webpack plugin that makes the process return an error code on failure",
   "main": "index.js",
   "engines": {
-    "node": ">=0.11.12"
+    "node": ">=4.3.0 <5.0.0 || >=5.10"
   },
   "keywords": [
     "webpack"
   ],
   "peerDependencies": {
-    "webpack": "^1.9.11"
+    "webpack": "^2.0.0"
   },
-  "author": "Tiddo Langerak <tiddolangerak@gmail.com>",
+  "author": "Austin M. Matherne",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TiddoLangerak/webpack-fail-plugin.git"
+    "url": "git+https://github.com/AustinMatherne/fail-on-errors-webpack-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/TiddoLangerak/webpack-fail-plugin/issues"
+    "url": "https://github.com/AustinMatherne/fail-on-errors-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/TiddoLangerak/webpack-fail-plugin#readme"
+  "homepage": "https://github.com/AustinMatherne/fail-on-errors-webpack-plugin"
 }
