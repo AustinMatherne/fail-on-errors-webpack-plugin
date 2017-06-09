@@ -23,3 +23,5 @@ class FailOnErrorsPlugin {
     });
   }
 }
+
+module.exports = FailOnErrorsPlugin;
