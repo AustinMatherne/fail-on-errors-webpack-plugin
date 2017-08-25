@@ -1,5 +1,7 @@
 # FailOnErrorsPlugin
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/AustinMatherne/fail-on-errors-webpack-plugin.svg)](https://greenkeeper.io/)
+
 Webpack plugin that will make the process exit with status code 1 when it finishes with soft errors or warnings.
 
 ## Install
