@@ -11,7 +11,7 @@ class FailOnErrorsPlugin {
   }
 
   apply(compiler) {
-    compiler.plugin('done', stats => {
+    compiler.hooks.done.tap('FailOnErrorsPlugin', stats => {
       const errors = this.options.failOnErrors && stats.hasErrors();
       const warnings = this.options.failOnWarnings && stats.hasWarnings();
 
